@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "bitauto-crawler"
+version = "0.2.0"
+description = "Identity-aware BitAuto international vehicle data collection and Feishu synchronization"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = ["requests>=2.31", "pydantic>=2.7,<3", "lxml>=5"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "ruff>=0.3"]
+
+[tool.setuptools.packages.find]
+include = ["bitauto*"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
